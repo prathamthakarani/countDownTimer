@@ -23,16 +23,19 @@ document.getElementById("customMin")
   .addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
-      let inputMin = document.getElementById("customMin").value *60;
-      inputBackAt(inputMin);
+      let inputSec = document.getElementById("customMin").value *60;
+      inputBackAt(inputSec);
       setInterval(function () {
-        let minutes = Math.floor((inputMin / 60));
-        let seconds = inputMin % 60;
-        if (inputMin > 0) {
+        let minutes = Math.floor((inputSec / 60));
+        let seconds = inputSec % 60;
+        if (inputSec > 0) {
           document.getElementById("display__time-left").innerHTML =
             minutes + ":" + seconds;
         }
-        inputMin--;
+        else if(inputSec == 0){
+          document.getElementById("display__time-left").innerHTML = "00:00"
+        }
+        inputSec--;
       }, 1000);
     }
   });
