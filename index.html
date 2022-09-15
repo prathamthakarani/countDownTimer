@@ -17,12 +17,13 @@
       <button data-time="1200" value="1200" class="timer__button">Snack 20</button>
       <button data-time="3600" value="3600" class="timer__button">Lunch Break</button>
       <form name="customForm" id="custom">
-        <input  id="customMin" placeholder="Enter Minutes"  >
+        <input  id="customMin" type="number" placeholder="Enter Minutes"  >
       </form>
     </div>
     <div class="display">
       <h1 id="display__time-left">00:00</h1>
       <p id="display__end-time">Be Back At 00.00</p>
+      <h1 id="current_time"></h1>
       <div class="reload">
         <button onClick="window.location.reload(true)">Reset The Timer</button>
       </div>
