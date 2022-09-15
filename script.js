@@ -45,14 +45,13 @@ function displayTime(minutes){
 }
 
 let displayTimeLeft = setInterval(function () {
-  clearInterval(inpSecInt);
   timeLeft(valueOfTime);
   valueOfTime--;
 }, 1000);
 
 
-document.getElementById("customMin")
-  .addEventListener("keypress", function (event) {
+document.getElementById("customMin").addEventListener("keypress", function (event) {
+
     if (event.key === "Enter") {
       event.preventDefault();
       clearInterval(displayTimeLeft);
@@ -63,10 +62,9 @@ document.getElementById("customMin")
         inputSec--;
       }, 1000);
       
-    }
-    
-    
+    } 
   });
+  
 
   function timeLeft(sec){
     let minutes = Math.floor(sec / 60);
@@ -79,5 +77,7 @@ document.getElementById("customMin")
       alert("Your CountDown Timer is at 00:00");
     }
     sec--;
+    
   }
+
 
