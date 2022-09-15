@@ -45,6 +45,7 @@ function displayTime(minutes){
 }
 
 let displayTimeLeft = setInterval(function () {
+  clearInterval(inpSecInt);
   timeLeft(valueOfTime);
   valueOfTime--;
 }, 1000);
@@ -57,11 +58,14 @@ document.getElementById("customMin")
       clearInterval(displayTimeLeft);
       let inputSec = document.getElementById("customMin").value *60;
       inputBackAt(inputSec);
-      setInterval(function () {
+     let inpSecInt =  setInterval(function () {
         timeLeft(inputSec);
         inputSec--;
       }, 1000);
+      
     }
+    
+    
   });
 
   function timeLeft(sec){
